@@ -1,0 +1,18 @@
+rug Molecule Visualization and Analysis Tool
+Overview
+This tool enables researchers to visualize and analyze drug molecule data with a user-friendly interface. It provides functionalities for visualizing molecule structures and analyzing key properties. The primary features include:
+
+Molecule Visualization:
+
+Display molecule structures in 2D or 3D representations.
+Interact with structures by zooming, rotating, and highlighting regions.
+Molecule Analysis:
+
+Present key properties like predicted binding affinity, solubility, and potential side effects.
+Visualize and compare properties across multiple molecules using charts or graphs.
+
+
+Technologies Used
+Front-end framework: React.js
+Chemical structure visualization library: 3Dmol.js
+

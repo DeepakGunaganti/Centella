@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState, useEffect } from 'react';
+import MoleculeVisualization from './components/MoleculeVisualization';
+
 
 function App() {
+  const [moleculeData, setMoleculeData] = useState('');
+
+  useEffect(() => {
+    // Fetch the PDB file content
+    fetch('/moleculeData/Water.pdb')
+      .then((response) => response.text())
+      .then((pdbData) => setMoleculeData(pdbData))
+      .catch((error) => console.error('Error fetching PDB data:', error));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Drug Molecule Visualization and Analysis Tool</h1>
+      <MoleculeVisualization moleculeData={moleculeData} />
+   
     </div>
   );
 }
